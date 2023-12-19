@@ -26,7 +26,7 @@ Ref: https://github.com/zaproxy/action-full-scan
 
 ### License Compliance Scan
 
-Ref: https://github.com/jmservera/license-finder-action
+Ref: https://github.com/jmservera/license-finder-action && https://github.com/pivotal/LicenseFinder
 
 ### How to analyze scan reports (json & serif report files)
 
