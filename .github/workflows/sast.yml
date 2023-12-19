@@ -88,11 +88,11 @@ jobs:
       with:
         name: spotbugs.sarif
         path: ${{github.workspace}}/results.sarif
-    - name: Upload analysis results to GitHub Security tab
-      if: always()
-      uses: github/codeql-action/upload-sarif@v2.1.28
-      with:
-        sarif_file: ${{github.workspace}}/results.sarif    
+#    - name: Upload analysis results to GitHub Security tab
+#      if: always()
+#      uses: github/codeql-action/upload-sarif@v2.1.28
+#      with:
+#        sarif_file: ${{github.workspace}}/results.sarif    
 
   semgrep:
     needs: [SAST-CodeQL]
