@@ -17,7 +17,8 @@ Identify vulnerabilities in built images -> Trivy Image Scanner
 Ref: https://github.com/aquasecurity/trivy-action
 
 ### DAST Scan with OWASP ZAP Scan 
-DAST: Dynamic Application Security Testing)
+DAST: Dynamic Application Security Testing
+
 OWASP (Open Web Application Security Project) ZAP (Zed Attack Proxy)
 
 Ref: https://github.com/zaproxy/action-baseline
