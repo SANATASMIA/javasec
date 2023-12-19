@@ -6,3 +6,7 @@ Note: For GitHub Actions to work --> repo "Settings" -> Actions -> General -> Wo
 Ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs && https://arinco.com.au/blog/changes-to-the-default-github_token-permissions/
 
 
+Ref: https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml -> example python script to upload scan results to defectdojo to analyze scan reports (json & serif report files)
+
+
+
