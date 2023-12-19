@@ -5,17 +5,13 @@ on:
     # * is a special character in YAML so you have to quote this string, this is always UTC -> d.h. subtract 1h for CET. run saturday
     - cron:  '28 14 * * *'
   workflow_dispatch:
-  
+
 jobs:
   build:
     name: Build
     uses: ./.github/workflows/build.yml
     secrets: inherit #https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idsecretsinherit
-    permissions:
-      contents: read
-      issues: read
-      checks: write
-      pull-requests: write
+
   sca:
     needs: build
     name: SCA
