@@ -1,9 +1,18 @@
 ## How to build a DevSecOps Pipeline in GitHub
 This repository shows you how to build up an enterprise-ready DevSecOps Pipeline with GitHub. 
 
-Note: For GitHub Actions to work --> repo "Settings" -> Actions -> General -> Workflow permissions : V Read and write permissions.
+Note: For GitHub Actions to work (OWASP) --> repo "Settings" -> Actions -> General -> Workflow permissions : V Read and write permissions.
 
 Ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs && https://arinco.com.au/blog/changes-to-the-default-github_token-permissions/
+
+## GitHub Actions Used 
+
+| Step                                                    | Github Action                                                                            | Comments | Open Source Alternative                             |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- | --------------------------------------------------- |
+| SCA: Software Composition Analysis (Dependency Checker) | [snyk](https://github.com/redhat-actions/crda)                                           |          | OWASP Dependency Check                              |
+| SAST: Static Code Analysis                              | [CodeQL](https://github.com/github/codeql-action)                                        |          |                                                     |
+| Container Scan                                          | [Trivy](https://github.com/marketplace/actions/aqua-security-trivy)                      |          |                                                     |
+| DAST: Dynamic Application Security Testing              | [OWASP ZAP Basline Scan](https://github.com/marketplace/actions/owasp-zap-baseline-scan) |          |                                                     |
 
 
 ### SCA Scan with CRDA:
