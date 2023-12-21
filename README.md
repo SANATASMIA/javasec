@@ -9,8 +9,7 @@ Ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
 
 | Step                                                    | Github Action                                                                            | Comments | Open Source Alternative                             |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- | --------------------------------------------------- |
-| SCA: Software Composition Analysis (Dependency Checker) | [snyk](https://github.com/redhat-actions/crda)                                           |          | OWASP Dependency Check                              |
-| SAST: Static Code Analysis                              | [CodeQL](https://github.com/github/codeql-action)                                        |          |                                                     |
+| SCA: Software Composition Analysis (Dependency Checker) | [CDRA](https://github.com/redhat-actions/crda)                                           |          | OWASP Dependency Check                              |
 | Container Scan                                          | [Trivy](https://github.com/marketplace/actions/aqua-security-trivy)                      |          |                                                     |
 | DAST: Dynamic Application Security Testing              | [OWASP ZAP Basline Scan](https://github.com/marketplace/actions/owasp-zap-baseline-scan) |          |                                                     |
 
