@@ -12,7 +12,7 @@ Ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
 | SCA: Software Composition Analysis (Dependency Checker) | [CDRA](https://github.com/redhat-actions/crda)                                           |          | OWASP Dependency Check                              |
 | Container Scan                                          | [Trivy](https://github.com/marketplace/actions/aqua-security-trivy)                      |          |                                                     |
 | DAST: Dynamic Application Security Testing              | [OWASP ZAP Basline Scan](https://github.com/marketplace/actions/owasp-zap-baseline-scan) |          |                                                     |
-| License Checker                                         | [License finder](https://github.com/marketplace/actions/license-finde                    |          |                                                     |
+| License Checker                                         | [License finder](https://github.com/marketplace/actions/license-finder-scan)             |          |                                                     |
 
 
 ### SCA Scan with CRDA:
