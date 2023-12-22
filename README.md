@@ -47,5 +47,14 @@ https://www.defectdojo.org
 
 Note: https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml -> example python script to upload scan results to defectdojo to analyze scan reports (json & serif report files)
 
+### GH Actions References: 
+
+https://github.com/actions
+
+https://github.com/marketplace?type=actions
+
+Syntax: 
+
+https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
 
