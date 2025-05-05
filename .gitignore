@@ -1,6 +1,10 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+### .env Secrets ###
+.evn
+
+
 ### STS ###
 .apt_generated
 .classpath
