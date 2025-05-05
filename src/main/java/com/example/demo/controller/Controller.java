@@ -69,9 +69,9 @@ public class Controller {
 
     private static Key getRandomKey(String cipher, int keySize) {
         byte[] randomKeyBytes = new byte[keySize / 8];
-        // That is NOK
-        Random random = new Random();
-        random.nextBytes(randomKeyBytes);
+        // Use SecureRandom for cryptographic security
+        SecureRandom secureRandom = new SecureRandom();
+        secureRandom.nextBytes(randomKeyBytes);
         return new SecretKeySpec(randomKeyBytes, cipher);
     }
 
