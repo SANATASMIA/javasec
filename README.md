@@ -57,4 +57,103 @@ Syntax:
 
 https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
+### GitHub Advanced Security (GHAS) Implementation - Assignment
+
+** Objective**
+
+Enable GitHub Advanced Security (GHAS) features for a repository to integrate security early into the SDLC.
+
+** Repository Setup**
+
+Create a Repository on GitHub.
+
+Push Application Code:
+
+Create a Personal Access Token (PAT) with required scopes (repo, workflow, security_events).
+
+Use git to push the code:
+
+git remote add origin https://github.com/<username>/<repo>.git
+git push -u origin main
+
+**GHAS Features Enabled**
+
+Navigate to your GitHub repository ➝ Go to Security tab ➝ Enable the following:
+
+1. Security Policy
+
+Navigate to Settings ➝ Security ➝ Security Policy
+
+Add a SECURITY.md file describing how to report vulnerabilities.
+
+2. Security Advisory
+
+Enable private advisories to disclose and patch vulnerabilities responsibly.
+
+3. Dependabot Alerts
+
+Enable from Settings ➝ Code Security and Analysis ➝ Dependabot Alerts
+
+Detect known vulnerable dependencies.
+
+4. Code Scanning Alerts
+
+Configure GitHub Actions workflow for static code scanning.
+
+Modify .github/workflows/codeql.yml to include:
+
+name: CodeQL
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+5. Secret Scanning Alerts
+
+Enable from Settings ➝ Code Security and Analysis ➝ Secret Scanning
+
+Detect leaked tokens and credentials.
+
+**Running the Scan**
+
+After enabling GHAS features and merging the workflow, GitHub will:
+
+Trigger a CodeQL scan on every push/PR.
+
+Scan for secrets and dependency issues automatically.
+
 
