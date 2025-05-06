@@ -7,12 +7,12 @@ Ref: https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
 
 ## GitHub Actions Used 
 
-| Step                                                    | Github Action                                                                            | Comments | Open Source Alternative                             |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- | --------------------------------------------------- |
-| SCA: Software Composition Analysis (Dependency Checker) | [CDRA](https://github.com/redhat-actions/crda)                                           |          | OWASP Dependency Check                              |
-| Container Scan                                          | [Trivy](https://github.com/marketplace/actions/aqua-security-trivy)                      |          |                                                     |
-| DAST: Dynamic Application Security Testing              | [OWASP ZAP Basline Scan](https://github.com/marketplace/actions/owasp-zap-baseline-scan) |          |                                                     |
-| License Checker                                         | [License finder](https://github.com/marketplace/actions/license-finder-scan)             |          |                                                     |
+| Security Type         | Tool Example           | Phase of SDLC    | Why Used Here                         |
+| --------------------- | ---------------------- | ---------------- | ------------------------------------- |
+| **SAST**              | CodeQL                 | Development (CI) | Catch code issues early               |
+| **SCA**               | Dependabot             | Post-merge / CI  | Update unsafe dependencies            |
+| **Secrets Detection** | GitHub Secret Scanning | Pre-commit / CI  | Prevent leaking credentials           |
+| **Policy/Advisories** | GitHub UI              | Anytime          | For secure communication & disclosure |
 
 
 ### SCA Scan with CRDA:
