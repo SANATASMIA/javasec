@@ -12,47 +12,46 @@ permissions:
 
 jobs:
   build:
-    name: Build
+    name: Build and Test Java App
     uses: ./.github/workflows/build.yml
-    secrets: inherit #https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idsecretsinherit
+    secrets: inherit
 
   sca:
+    name: Software Composition Analysis (SCA)
     needs: build
-    name: SCA
     uses: ./.github/workflows/sca.yml
     secrets: inherit
 
   sast:
+    name: Static Application Security Testing (SAST)
     needs: build
-    name: SAST
     uses: ./.github/workflows/sast.yml
     secrets: inherit
 
   license-compliance:
+    name: License Compliance Check
     needs: build
-    name: License compliance
     uses: ./.github/workflows/license-compliance.yml
     secrets: inherit
 
   docker:
+    name: Build Docker Image
     needs: build
-    name: Build docker image
     uses: ./.github/workflows/docker.yml
     secrets: inherit
 
   container-image-scan:
+    name: Scan Docker Image for Vulnerabilities
     needs: docker
-    name: Build docker image
     uses: ./.github/workflows/container-image-scan.yml
     secrets: inherit
     with:
       image-tag: ${{ needs.docker.outputs.image-tag }}
 
   dast:
-    needs: [build,docker]
-    name: DAST Scan
+    name: Dynamic Application Security Testing (DAST)
+    needs: [build, docker]
     uses: ./.github/workflows/dast.yml
     secrets: inherit
     with:
       image-tag: ${{ needs.docker.outputs.image-tag }}
- 
