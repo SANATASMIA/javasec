@@ -1,9 +1,12 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    directory: "/"                 # location of your pom.xml
+    directory: "/"                 # path to pom.xml
     schedule:
-      interval: "weekly"           # or "daily", "monthly"
+      interval: "daily"
     open-pull-requests-limit: 5
     allow:
       - dependency-type: "direct"
+    ignore:
+      - dependency-name: "org.springframework.boot:spring-boot-starter"  # Optional
+
