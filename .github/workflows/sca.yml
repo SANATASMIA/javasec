@@ -1,4 +1,6 @@
 name: 20 SCA
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
